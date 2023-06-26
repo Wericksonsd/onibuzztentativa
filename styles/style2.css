@@ -181,6 +181,14 @@ body{
     font-size: 2em;
 }
 
+#sair{
+    margin-top: 10%;
+    font-weight: 500;
+    font-size: 1.3em;
+    margin-right: 20%;
+    text-align: right;
+}
+
 #periodoTab li:hover{
     color: var(--rox);
     font-size: 2.1em;
