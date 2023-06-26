@@ -26,17 +26,21 @@ body{
 .tela{
     background: rgb(240,240,240);
     background: linear-gradient(180deg, rgba(240,240,240,1) 0%, rgba(198,198,198,1) 56%);
-    width: 428px;
-    height: 926px;
+    height: 98vh;
+    width: 99vw;
     margin: auto;
     padding: 0 15px;
     display: flex;
     flex-direction: column;
+    background-image: url('https://static.vecteezy.com/ti/vetor-gratis/p1/2668544-fundo-laranja-corporativo-ondulado-vetor.jpg');
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 header{
     height: 350px;
-    background-image: url(/imgs/LOGO.png);
+    background-image: url("/imgs/LOGO.png");
     background-size: 70%;
     background-repeat: no-repeat;
     background-position: center;
@@ -122,7 +126,7 @@ header{
 }
 
 footer{
-    height: 25%;
+    height: 20%;
     background-image: url("/imgs/Untitled-1.png");
     background-repeat: no-repeat;
     background-position: center;
