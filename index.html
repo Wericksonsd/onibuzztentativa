@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Principal</title>
+</head>
+
+<body>
+    <div class="tela">
+        <header></header>
+        <div class="login">
+            <h3>LOGUE COM SUAS INFORMAÇÕES</h3>
+            <p>NOME</p>
+            <input type="text" class="ipt" name="Cpf" id="cpf">
+            <p>SENHA</p>
+            <input type="password" class="ipt" name="Senha" id="senha">
+            <div class="btn">
+                <input type="submit" id="logar" class="botao" value="ENVIAR" onclick="login(); return false">
+                <input type="submit" id="login" class="botao" value="ESQUECI A SENHA">
+            </div>
+            <p id="crie">Ou crie sua conta clicando </br> <span id="aqui">AQUI!</span></p>
+        </div>
+        <footer>
+            <p>Desenvolvido por Equipe <span class="negr">Bala-Bala</span></p>
+        </footer>
+    </div>
+
+    <script>
+        function login(){
+            location.href = "horarios.html";
+        }
+    </script>    
+</body>
+</html>

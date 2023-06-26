@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style2.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="popup" id="periodoTab">
+        <ul>
+            <li onclick="setPeriodo(1, 'MATUTINO')">MATUTINO</li>
+            <li onclick="setPeriodo(2, 'VESPERTINO')">VESPERTINO</li>
+            <li onclick="setPeriodo(3, 'NOTURNO')">NOTURNO</li>
+        </ul>
+    </div>
+
+    <div class="popup" id="pontoTab">
+        <ul>
+            <li onclick="setPonto(1, 'PONTO 1','Rua das Flores, 52')">PONTO 1</li>
+            <li onclick="setPonto(2, 'PONTO 2','Rua Olímpia, 246')">PONTO 2</li>
+            <li onclick="setPonto(3, 'PONTO 3','Av. Cravo,71')">PONTO 3</li>
+            <li onclick="setPonto(4, 'PONTO 4','Groove Street, 99')">PONTO 4</li>
+            <li onclick="setPonto(5, 'PONTO 5','Av. XV de Novembro, 377')">PONTO 5</li>            
+            <li onclick="setPonto(6, 'PONTO 6','Rua Calipso, 12')">PONTO 6</li>
+        </ul>
+    </div>
+
+    <div class="tela" >
+        <div class="login" style="height: 90vh;">
+            <p>HORÁRIO</p>
+            <div id="horario" class="ipt">
+                <p class="hora" id="time">--:--</p>
+            </div>
+            <p>PONTO</p>
+            <div id="ponto" class="ipt" onclick="popupPonto()">
+                <span  class="hora">
+                    <p id="pontoCx">DEFINA O PONTO</p><p id="ruaaa"></p>
+                </span>
+            </div>
+            <p>PERÍODO</p>
+            <div id="periodo" class="ipt" onclick="popuPeriodo()">
+                <p id="periodoCx" class="hora">0:00</p>
+            </div>
+
+            <div id="check"><p id="simb">!</p><p style="font-size: 2em; font-weight: 600;" id="avisooo">CHECAR</p></div>
+
+            <div id="rodape"><button id="aviso" onclick="aviso()">ENVIAR AVISO</button></div>
+            
+        </div>
+        <footer>
+            <p>Desenvolvido por Equipe <span class="negr">Bala-Bala</span></p>
+        </footer>
+    </div>
+
+    <script>
+        var ponto = 0;
+        var periodo = "periodo";        
+        var toque = 0;
+
+        function popupPonto() {
+            const pontoTab = document.getElementById('pontoTab');
+            pontoTab.style.display = 'block';
+        }
+
+        function popuPeriodo() {
+            const periodoTab = document.getElementById('periodoTab');
+            periodoTab.style.display = 'block';
+        }
+
+
+
+        function setPonto(esc, pt, rua) {
+            ponto = esc;
+            pontoTab.style.display = 'none';
+            document.getElementById('pontoCx').textContent = pt;
+            document.getElementById('ruaaa').textContent = rua;
+            checarRota();
+            altHora();
+        }
+
+        function setPeriodo(esc, per) {
+            periodo = esc;
+            periodoTab.style.display = 'none';
+            document.getElementById('periodoCx').textContent = per;
+            checarRota();
+            altHora();
+        }
+
+        function checarRota(){
+            var checar = document.getElementById('check');
+            if(ponto != 0 && periodo != 0){
+                switch(periodo){
+                    case 1:
+                        if(ponto<4){
+                            checar.style.backgroundColor = 'var(--rox2)';
+                            checar.style.color = 'var(--cin)';
+                            document.getElementById('simb').textContent = 'X';
+                            document.getElementById('avisooo').textContent = 'INDISPONÍVEL';
+                        } else {
+                            checar.style.backgroundColor = 'var(--cin)';
+                            checar.style.color = 'var(--rox)';
+                            document.getElementById('simb').textContent = '✔';
+                            document.getElementById('avisooo').textContent = 'DISPONÍVEL';
+                        }
+                    break;
+
+                    case 2:
+                        if(ponto<2){
+                            checar.style.backgroundColor = 'var(--rox2)';
+                            checar.style.color = 'var(--cin)';
+                            document.getElementById('simb').textContent = 'X';
+                            document.getElementById('avisooo').textContent = 'INDISPONÍVEL';
+                        } else {
+                            checar.style.backgroundColor = 'var(--cin)';
+                            checar.style.color = 'var(--rox)';
+                            document.getElementById('simb').textContent = '✔';
+                            document.getElementById('avisooo').textContent = 'DISPONÍVEL';
+                        }
+                    break;
+
+                    case 3:
+                        if(ponto<3){
+                            checar.style.backgroundColor = 'var(--rox2)';
+                            checar.style.color = 'var(--cin)';
+                            document.getElementById('simb').textContent = 'X';
+                            document.getElementById('avisooo').textContent = 'INDISPONÍVEL';
+                        } else {
+                            checar.style.backgroundColor = 'var(--cin)';
+                            checar.style.color = 'var(--rox)';
+                            document.getElementById('simb').textContent = '✔';
+                            document.getElementById('avisooo').textContent = 'DISPONÍVEL';
+                        }
+                    break;
+                }
+            } else {
+                return;
+            }
+        }
+
+        function altHora(){
+            horaa = document.getElementById('time')
+            if(ponto != 0 && periodo != 0){
+                switch (periodo){
+                    case 1:
+                        switch (ponto){
+                            case 1:
+                                horaa.textContent = '06:00';
+                            break;
+                            case 2:
+                                horaa.textContent = '06:15';
+                            break;
+                            case 3:
+                                horaa.textContent = '06:30';
+                            break;
+                            case 4:
+                                horaa.textContent = '07:40';
+                            break;
+                            case 5:
+                                horaa.textContent = '07:00';
+                            break;
+                            case 6:
+                                horaa.textContent = '07:15';
+                            break;
+                        }
+                    break;
+
+                    case 2:
+                        switch (ponto){
+                            case 1:
+                                horaa.textContent = '11:00';
+                            break;
+                            case 2:
+                                horaa.textContent = '11:15';
+                            break;
+                            case 3:
+                                horaa.textContent = '11:30';
+                            break;
+                            case 4:
+                                horaa.textContent = '11:40';
+                            break;
+                            case 5:
+                                horaa.textContent = '12:00';
+                            break;
+                            case 6:
+                                horaa.textContent = '12:15';
+                            break;
+                        }
+                    break;
+
+                    case 3:
+                        switch (ponto){
+                            case 1:
+                                horaa.textContent = '17:00';
+                            break;
+                            case 2:
+                                horaa.textContent = '17:15';
+                            break;
+                            case 3:
+                                horaa.textContent = '17:30';
+                            break;
+                            case 4:
+                                horaa.textContent = '17:40';
+                            break;
+                            case 5:
+                                horaa.textContent = '18:00';
+                            break;
+                            case 6:
+                                horaa.textContent = '18:15';
+                            break;
+                        }
+                    break;
+                }
+
+                
+            }
+        }
+    
+        function aviso(){
+            var aviso = document.getElementById('aviso');
+            if(toque == 0){
+                toque = 1;
+                aviso.textContent = 'ENVIADO';
+                aviso.style.backgroundColor = 'var(--cin)';
+                aviso.style.color = 'var(--rox2)';                
+            } else if(toque == 1){
+                toque= 0;
+                aviso.textContent = 'ACEITO';
+                aviso.style.backgroundColor = 'var(--rox2)';
+                aviso.style.color = 'var(--amr)';  
+            }
+        }
+    </script>
+</body>
+</html>
