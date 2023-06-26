@@ -40,10 +40,17 @@ body{
 
 header{
     height: 30vh;
-    background-image: url("/imgs/LOGO.png");
-    background-size: 70%;
-    background-repeat: no-repeat;
-    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--rox2);
+    font-size: 3em;
+    font-weight: 600;
+}
+
+#buzz{
+    font-weight: 900;
+    font-style: italic;
 }
 
 .login{
@@ -111,7 +118,7 @@ header{
 
 #crie{
     text-align: center;
-    margin-top: 20%;
+    margin-top: 10%;
     font-size: 1.2em;
     line-height: 1.5em;
 }
