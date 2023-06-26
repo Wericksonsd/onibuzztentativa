@@ -26,8 +26,8 @@ body{
 .tela{
     background: rgb(240,240,240);
     background: linear-gradient(180deg, rgba(240,240,240,1) 0%, rgba(198,198,198,1) 56%);
-    height: 98vh;
-    width: 99vw;
+    height: 100vh;
+    width: 100vw;
     margin: auto;
     padding: 0 15px;
     display: flex;
@@ -39,7 +39,7 @@ body{
 }
 
 header{
-    height: 350px;
+    height: 30vh;
     background-image: url("/imgs/LOGO.png");
     background-size: 70%;
     background-repeat: no-repeat;
@@ -49,8 +49,8 @@ header{
 .login{
     background-color: var(--rox);
     color: var(--bra);
-    max-width: 428px;
-    height: 400px;
+    width: 90vw;
+    height: 70vh;
     border-radius: 10px;
     padding: 20px;
 }
@@ -111,7 +111,7 @@ header{
 
 #crie{
     text-align: center;
-    margin-top: 20px;
+    margin-top: 20%;
     font-size: 1.2em;
     line-height: 1.5em;
 }
@@ -126,17 +126,11 @@ header{
 }
 
 footer{
-    height: 20%;
-    background-image: url("/imgs/Untitled-1.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 140%;
-    margin: 0 -15px;
-    margin-top: 20px;
+    height: 15vh;
 }
 
 footer>p{
-    margin-top: 38%;
+    margin-top: 10%;
     text-align: center;
 }
 
